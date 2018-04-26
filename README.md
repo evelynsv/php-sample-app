@@ -9,7 +9,9 @@ Os arquivos dockerfile ja foram configurados, você os encontrará nas pastas "F
 Execute o Docker Quickstart Terminal e salve o ip que ele retorna na execução.
 
 Entre na pasta da sua aplicação e execute:
+
 docker pull php:7.2-apache
+
 docker pull mysql:5.7
 
 Entre na pasta backend e execute:
