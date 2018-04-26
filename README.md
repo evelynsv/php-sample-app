@@ -2,7 +2,7 @@
 
 # Executando uma aplicação baseada em php e mysql em containers.
 
-Clone a aplicação executando : git clone https://github.com/
+Clone a aplicação executando : git clone https://github.com/evelynsv/php-sample-app
 
 Os arquivos dockerfile ja foram configurados, você os encontrará nas pastas "Frontend" e "Backend".
 
