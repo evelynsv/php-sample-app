@@ -1,18 +1,30 @@
-# Sistemas para Internet - SecDevOps
+# Sistemas para internet - Devops
 
-***nac:*** Criação de uma aplicação no formato "CRUD" executada em containers com base na linguagem "PHP" e no banco de dados "MySQL";
+#Executando uma aplicação baseada em php e mysql em containers.
 
----
+Clone a aplicação executando : git clone https://github.com/
 
-***Importante:***
+Os arquivos dockerfile ja foram configurados, você os encontrará nas pastas "Frontend" e "Backend".
 
-Instruções sobre modelo de execução e entregáveis podem ser obtidas no [diretório de documentação](https://github.com/fiapsecdevops/php-sample-app/tree/master/docs) ou no portal do aluno;
+Execute o Docker Quickstart Terminal e salve o ip que ele retorna na execução.
 
-Duvidas podem ser enviadas para <profhelder.pereira@fiap.com.br>
+Entre na pasta da sua aplicação e execute:
+docker pull php:7.2-apache
+docker pull mysql:5.7
 
-Esta app foi adaptada do exemplo contido [neste artigo](https://www.tutorialrepublic.com/php-tutorial/php-mysql-crud-application.php)
+Entre na pasta backend e execute:
+docker build . -t backend-mysql:0.1
 
-A estrutura foi criada com base nas seguintes tags:
+Execute na pasta frontend:
+docker build . -t frontend-php:0.1
 
-- frontend-0.1: Versão de testes SEM conexão com o banco para a primeira parte da NAC;
-- stable:  Versão COM as linhas de conexão com o banco configuradas, será necessário que o MySQL esteja operante para testes faltando apenas a criação do Dockerfile da aplicação/mysql;
+Execute:
+docker run -d --rm --name backend -e MYSQL_DATABASE=demo -e MYSQL_ALLOW_EMPTY_PASSWORD=yes backend-mysql:0.1
+
+docker run -d --rm --name frontend -p 80:80 --link backend frontend-php:0.1
+
+docker ps
+
+Acesse o endereço de ip que é passado quando você starta o Docker Quickstart Terminal: 192.168.99.100:80
+
+
