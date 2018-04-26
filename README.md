@@ -1,6 +1,6 @@
 # Sistemas para internet - Devops
 
-#Executando uma aplicação baseada em php e mysql em containers.
+# Executando uma aplicação baseada em php e mysql em containers.
 
 Clone a aplicação executando : git clone https://github.com/
 
